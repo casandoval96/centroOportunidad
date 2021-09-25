@@ -132,9 +132,7 @@
 
 
       <form action="" method= "POST" enctype="multipart/form-data">
-        <div  id="alertMessage" class="alert alert-danger invisible" role="alert">
-          El usuario ya existe !!!
-        </div>
+    
       <div class="sign-up-htm">
         <div class="group">
           <label for="user" class="label">Identificacion</label>
@@ -150,7 +148,7 @@
         </div>
         <div class="group">
           <label for="pass" class="label">Usuario</label>
-          <input id="pass" type="text-white" class="input" data-type="text-white" name="usunombre" >
+          <input id="pass" type="text-danger" class="input" data-type="text-danger" name="usunombre" >
         </div>
         <div class="group">
           <label for="pass" class="label">Contraeña</label>
@@ -169,7 +167,7 @@
        <input type="hidden"  placeholder="Estado"       name="usuestado"  value="1">
        <input type="hidden"  placeholder="aspirante"    name="usurol" value="Aspirante">
        <input type="hidden"  name="usu">
-       <input type="file"  name="foto" accept="image/gif,image/jpeg,image/png,application/pdf" id="exampleInputPassword5" value="defecto.png" >                
+       <input type="hidden"  name="foto" accept="image/gif,image/jpeg,image/png,application/pdf" id="exampleInputPassword5" value="defecto.png" >                
         <div class="group">
           <input type="submit" name="insert" class="button" value="Registrarse">
         </div>
