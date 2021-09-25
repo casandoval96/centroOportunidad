@@ -64,7 +64,13 @@ if(isset($_POST['insert']))
 
      $idUsuario=$usu->unousu($usuid);
      if(count($idUsuario)>0){
-        echo "<script> $('.alert').alert();  </script>";
+        echo "<script> 
+            function mostrarMensaje(){
+              $('#exampleModal').modal();
+              alert('usuario ya existe');
+            }  
+            mostrarMensaje();
+        </script>";
      } else {
         if($adjunto!=null)
         {
