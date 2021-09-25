@@ -148,7 +148,6 @@ if(isset($_POST['insert']))
      $hojemail = $_POST['usu'];
      $hojlicencia = $_POST['usu'];
      $hojvehiculo = $_POST['usu'];
-     
      $idHoja=$hoj->uno($hojid);
      if(count($idHoja)>0){
         echo "<script>  $('.alert').alert();  </script>";
