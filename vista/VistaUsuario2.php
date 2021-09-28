@@ -174,7 +174,7 @@
          <tr><td><label for="">Rol</label></td>                <td><input type="text" name="usurol" class="insert"  value="<?php echo $a[5];?>"  required =""></td> </tr>
          <tr><td><label for="">Email</label> </td>              <td><input type="email"  name="usucorreo" class="insert"  value="<?php echo $a[6];?>"  required ="" ></td> </tr>
          <tr><td><label for="">Sexo</label></td>               <td><input type="text" name="ususexo" class="insert"  value="<?php echo $a[7];?>"  required =""></td> </tr>
-         <tr><td><label> foto</label></td>                     <td><input type="file" name="foto" accept="image/gif,image/jpeg,image/png,application/pdf" id="exampleInputPassword5" ></td></tr>   
+         <tr><td><label for=""> foto</label></td>               <td> <img style="width: 40px;" src="img/<?php echo $a[8];?>">   <input type="file" name="foto"   value="<?php echo $a[8];?>"  accept="image/gif,image/jpeg,image/png,application/pdf" id="exampleInputPassword5" ></td></tr>   
 
           <?php } ?> 
           </table>
@@ -237,15 +237,16 @@
                     <div class="form-group col-md-3">
                       <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
                       <div class="col-sm-10">
-                        <input type="email" class="form-control" name="usucorreo" required="">
+                        <input type="email" class="form-control" name="usucorreo" required="">s
                       </div>
                     </div>
                     <div class="form-group col-md-3">
                       <label for="inputState">Sexo</label>
-                      <select id="inputState" class="form-control" name="usurol" >
+                      <select id="inputState" class="form-control" name="ususexo" >
                         <option value="Hombre">Hombre</option>
                         <option value="Mujer">Mujer</option>
                       </select>
+                      <input type="hidden"  name="usu">
                     </div>
                     <div class="form-group col-md-4">
                       <label for="inputEmail4" class="col-sm-2 col-form-label" >FOTO</label>

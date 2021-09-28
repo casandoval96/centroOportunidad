@@ -91,6 +91,33 @@ public function Actualizarasp($ide,$nom,$rol,$gen)
     }
 
 
+    public function Eliminarasp($ide)
+    {
+        try
+        {
+            $ps=Conexion::conexionbd()->prepare('DELETE FROM  tbaspirante   WHERE aspcedulaaspirante=?');
+
+            
+            $ps->bindParam(1,$ide);
+
+
+            if($ps->execute())
+            {
+                $respuesta = 1;
+            }
+            else
+            {
+                $respuesta = 0;
+            }
+        }
+        catch (exception $e)
+        {
+            echo "Error al eliminar  ".$e;
+        }
+        return $respuesta;
+    }
+
+
 
 }
 ?>

@@ -167,8 +167,10 @@
        <input type="hidden"  placeholder="Estado"       name="usuestado"  value="1">
        <input type="hidden"  placeholder="aspirante"    name="usurol" value="Aspirante">
        <input type="hidden"  name="usu">
-       <input type="hidden"  name="foto" accept="image/gif,image/jpeg,image/png,application/pdf" id="exampleInputPassword5" value="defecto.png" >                
-        <div class="group">
+        <div class="invisible" >
+         <input type="file"  name="foto" accept="image/gif,image/jpeg,image/png,application/pdf" id="exampleInputPassword5" value="defecto.png" >                
+        </div>
+         <div class="group">
           <input type="submit" name="insert" class="button" value="Registrarse">
         </div>
       </div>
