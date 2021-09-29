@@ -34,8 +34,7 @@ class modeloFinalista{
     public function consultarfinalis()
     {
         try{
-            $ps=Conexion::conexionbd()->prepare('select finide,finaplid,psinombre,finfecha,finhora from tbfinalista  inner join tbpsicologo
-           on psiidentificacion=finpsicologo;');
+            $ps=Conexion::conexionbd()->prepare('select finide,finaplid,finseleccionador,finfecha,finhora from tbfinalista;');
             $ps->execute();
             $datos=$ps->fetchALL();
 
@@ -67,7 +66,7 @@ class modeloFinalista{
     {
         try
         {
-            $ps=Conexion::conexionbd()->prepare('INSERT INTO tbfinalista (finide,finaplid,finpsicologo,finfecha,finhora) VALUES(?,?,?,?,?)');
+            $ps=Conexion::conexionbd()->prepare('INSERT INTO tbfinalista (finide,finaplid,finseleccionador,finfecha,finhora) VALUES(?,?,?,?,?)');
 
             $ps->bindParam(1,$ide);
             $ps->bindParam(2,$nom);

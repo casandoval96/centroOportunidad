@@ -73,11 +73,11 @@ if(isset($_POST['insertarfinalista']))
 {
      $finide = $_POST['finide'];
      $finaplid = $_POST['finaplid'];
-     $finpsicologo = $_POST['finpsicologo'];
+     $finseleccionador = $_POST['finseleccionador'];
      $finfecha = $_POST['finfecha'];
      $finhora = $_POST['finhora'];
 
-    $insertar= $fin->Insertarfin($finide,$finaplid,$finpsicologo,$finfecha,$finhora);
+    $insertar= $fin->Insertarfin($finide,$finaplid,$finseleccionador,$finfecha,$finhora);
              
     if($insertar >0)
     {

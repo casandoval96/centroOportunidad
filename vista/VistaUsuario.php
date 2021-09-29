@@ -122,8 +122,10 @@
          <tr><td><label for="">Contraseña</label></td>         <td><input type="text" name="usucontrasena" class="form-control"  value="<?php echo $a[3];?>"  required =""></td> </tr>
          <tr><td><label for="">Estado</label></td>             <td><label><?php echo $a[4];?></label><input type="hidden" name="usuestado" class="form-control"  value="<?php echo $a[4];?>"  required =""></td> </tr>
          <tr><td><label for="">Rol</label></td>                <td><label><?php echo $a[5];?></label><td><input type="hidden" name="usurol" class="form-control"  value="<?php echo $a[5];?>"  required =""></td> </tr>
-         <tr><td><label for="">Email</label> </td>              <td><input type="email"  name="usucorreo" class="form-control"  value="<?php echo $a[6];?>"  required ="" ></td> </tr>
-         <tr><td><label for="">Sexo</label></td>               <td><input type="text" name="ususexo" class="form-control" required="" ></td> </tr>
+         <tr><td><label for="">Email</label> </td>             <td><input type="email"  name="usucorreo" class="form-control"  value="<?php echo $a[6];?>"  required ="" ></td> </tr>
+         <tr><td><label for="">Sexo</label></td>               <td> <select id="pass" type="text-dark" class="dropdown-item" name="ususexo"  required="">
+                                                                      <option style="color: black;" value="Hombre">Hombre</option>
+                                                                      <option style="color: black;" value="Mujer" >Mujer</option></select> </td> </tr>
          <tr><td><label for="">foto</label></td>               <td><input type="file" name="foto" accept="image/gif,image/jpeg,image/png,application/pdf" id="exampleInputPassword5" required="" ></td> </tr>      
           <?php } ?> 
           </table>

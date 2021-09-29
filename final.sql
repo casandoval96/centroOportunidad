@@ -27,12 +27,6 @@ create table tbnivel
  nivnombre varchar(50)
  );
 
-create table tbpsicologo
-(
-psiidentificacion int(11) NOT NULL AUTO_INCREMENT primary key,
-psinombre varchar(30),
-psiapellido varchar(30)
-);
 
  create table  tbempleado 
  (
@@ -134,15 +128,16 @@ psiapellido varchar(30)
 
 create table tbfinalista 
 (
- finidn int(11) NOT NULL AUTO_INCREMENT primary key,
+ finide int(11) NOT NULL AUTO_INCREMENT primary key,
  finaplid int(11),
- finpsicologo int(11),
+ finseleccionador int(11),
  finfecha date,
  finhora time,
+ finentrevista text,
+ findecision varchar,
  foreign key(finaplid) references tbaplicacion(aplid),
- foreign key(finpsicologo) references tbpsicologo(psiidentificacion)	
+ foreign key(finseleccionador) references tbusuario(usuid)	
 );	
-
 
 
 
@@ -164,8 +159,9 @@ select finide
 
 
 
+select finide,finaplid,finseleccionador,finfecha,finhora 
+from tbfinalista;  
 
 
 
-
-
+select * from tbusuario where usurol="Seleccionador"

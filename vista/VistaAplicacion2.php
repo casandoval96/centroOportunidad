@@ -268,7 +268,7 @@
                                <?php foreach($datohoj as $f) { ?> 
                                <input type="hidden" name="apliide" value="<?php echo $f[1];?>">
                                <input type="hidden" name="numaplicacion" value="<?php echo $aplicacion;?>">  
-                             <?php } ?>
+                               <?php } ?>
                                <td><input type="submit" name="agendar" value="Agendar Cita"></td>
 
                                </form>
@@ -281,32 +281,46 @@
 
 
     
-   <div class="col-8">
-      <form action="" method="POST">
-      <th scope="row"><input type="hidden" class="btn form-control" name="finide" value="0"></th>
-      <td><input type="hidden" class="btn-secondary form-control"  name="finaplid" value="<?php echo $numaplicacion;?>"></td>
+                  <div class="col-10">
 
-      <td><label>Categoria</label></td>
-      <td><select name="finpsicologo" class="btn-secondary  form-control">
-              
-               <?php
-               foreach ($datospsi as $f)
-                {?>
-                  <option value="<?php echo $f[0];?>"><?php echo $f[1];?></option>
-                  <?php
-                }
-                ?>
-      </select></td>
-      <td><input type="date" class="btn-secondary form-control"  name="finfecha" ></td>
-      <td><input type="time" class="btn-secondary form-control"  name="finhora" ></td>      
-      <td><input type="submit" name="insertarfinalista" value="Registar"></td>
-      </form>
-   </div>
+
+
+                      <form action="" method="POST">
+
+                      
+
+                      <input type="hidden" class="btn form-control" name="finide" value="0">
+                      <input type="hidden" class="btn-secondary form-control"  name="finaplid" value="<?php echo $numaplicacion;?>">
+                      <table class="table table-dark table-striped">
+                      <thead>
+                        <tr>
+                          <th scope="col">Psicologo</th>
+                          <th scope="col">Fecha</th>
+                          <th scope="col">Hora</th>
+                        </tr>
+                      </thead>
+                      <td><select name="finseleccionador" class="btn-secondary  form-control">
+                              
+                              <?php
+                              foreach ($datospsi as $f)
+                                {?>
+                                  <option value="<?php echo $f[0];?>"><?php echo $f[2];?></option>
+                                  <?php
+                                }
+                                ?>
+                      </select></td>
+                      <td><input type="date" class="btn-secondary form-control"  name="finfecha" min="2021-09-29" max="2021-10-31" requiered="" ></td>
+                      <td><input type="time" class="btn-secondary form-control"  name="finhora" ></td>      
+                      </table>         
+                      <td><input type="submit" name="insertarfinalista" value="AGENDAR"></td>
+                      
+                    </form> 
+                  </div>
 
 
 <br><br><br>
 
-<table class="table table-hover table-secondary col-8" >
+<table class="table table-hover table-secondary col-10" >
   <thead>
     <tr>
       <th scope="col">numero</th>

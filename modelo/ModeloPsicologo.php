@@ -7,7 +7,7 @@ class modelopsicologo{
     public function consultarpsi()
     {
         try{
-            $ps=Conexion::conexionbd()->prepare('select * from tbpsicologo');
+            $ps=Conexion::conexionbd()->prepare('select * from tbusuario where usurol="Seleccionador";');
             $ps->execute();
             $datos=$ps->fetchALL();
 
