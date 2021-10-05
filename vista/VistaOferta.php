@@ -10,7 +10,7 @@
 </head>
 <body>
 
-    <div id="sideNavigation" class="sidenav">
+<div id="sideNavigation" class="sidenav">
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
                      <center>               
                                       <img src="img/<?php echo $fotousu;?>" class='imgRedonda' width="170" height="170" style="border-radius:190px;border:10px solid blue;" >
@@ -20,14 +20,20 @@
                                         </div>
 
                                         <ul class="list-group list-group-flush">
-                                            <a type="button" class="btn btn-primary mb-1" href="usuario.php" style="width: 98%;" >
+                                            <a type="button" class="btn btn-primary mb-1" href="perfil.php" style="width: 99%;" >
+
                                               Ver perfil
-                                        </a>
+                                            </a>
+                                            <a type="button" class="btn btn-primary mb-1" href="empleado.php" style="width: 99%;" >
+
+                                              Empleado
+                                            </a>
+                                        </ul>    
                                       <form action="indice.php" method="POST">
                                         <button class="btn btn-danger"  type="submit" name="cerrar" style="width: 99%;">Cerrar sesion</button>
                                       </form>
-                                    </ul>
-                    </center>                    
+                                    
+                    </center>                 
     </div>
      
    <nav class="topnav navbar navbar-dark" style="background-color:#111;" > 
@@ -51,10 +57,10 @@
  
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color:rgba(00,00,00,0.3);" >
     <div class="btn-group btn-group-justified" role="group" style="width: 100%;height: 40px;">
-      <a href="Usuario2.php"     type="button" class="btn btn-danger">Usuarios</a>
-      <a href="oferta.php"       type="button" class="btn btn-danger">Oferta</a>
-      <a href="aplicaciones2.php" type="button" class="btn btn-danger">Aplicaciones</a>
-      <a href="empleado.php"    type="button" class="btn btn-danger">Empleado</a>  
+      <a href="Usuario2.php"     type="button" class="btn btn-dark" style="border-radius:  12px ;" >Usuarios</a>
+      <a href="oferta.php"       type="button" class="btn btn-dark" style="border-radius:  12px ;" >Oferta</a>
+      <a href="aplicaciones2.php" type="button" class="btn btn-dark" style="border-radius: 12px ;">Aplicaciones</a> 
+      <a href="finalista.php" type="button" class="btn btn-dark" style="border-radius: 12px ;">Entrevistas finalistas </a>  
     </div>
     </nav>
 

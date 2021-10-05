@@ -20,13 +20,13 @@
                                         </div>
 
                                         <ul class="list-group list-group-flush">
-                                            <a type="button" class="btn btn-primary mb-1" href="perfil.php" style="width: 99%;" >
+                                            <a type="button" class="btn btn-primary mb-1" href="perfil3.php" style="width: 99%;" >
 
-                                              Ver perfil
+                                            Ver Perfil
                                             </a>
-                                            <a type="button" class="btn btn-primary mb-1" href="empleado.php" style="width: 99%;" >
+                                            <a type="button" class="btn btn-primary mb-1" href="Seleccionador.php" style="width: 99%;" >
 
-                                              Empleado
+                                            Seleccionador 
                                             </a>
                                         </ul>    
                                       <form action="indice.php" method="POST">
@@ -50,29 +50,27 @@
       <a class="navbar-brand" href="#">
         <img src="vista/imagenes/facebook.png" width="30" height="25" alt="">
         <img src="vista/imagenes/gorjeo.png" width="30" height="25" alt="">
-        <img src="vista/imagenes/instagram.png" width="30" height="25" alt="">
-        <img src="vista/imagenes/whatsapp.png" width="30" height="25" alt="">
+ 
       </a> 
     </nav>
  
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color:rgba(00,00,00,0.3);" >
     <div class="btn-group btn-group-justified" role="group" style="width: 100%;height: 40px;">
-      <a href="Usuario2.php"     type="button" class="btn btn-dark" style="border-radius:  12px ;" >Usuarios</a>
-      <a href="oferta.php"       type="button" class="btn btn-dark" style="border-radius:  12px ;" >Oferta</a>
-      <a href="aplicaciones2.php" type="button" class="btn btn-dark" style="border-radius: 12px ;">Aplicaciones</a> 
-      <a href="finalista.php" type="button" class="btn btn-dark" style="border-radius: 12px ;">Entrevistas finalistas </a>  
-    </div>
-    </nav>
+      <a href="Usuario3.php"     type="button" class="btn btn-dark" style="border-radius:  12px ;" >Mi Usuario</a>
+      <a href="oferta.php"       type="button" class="btn btn-dark" style="border-radius:  12px ;" >Citas Agendadas  </a>
 
-    
+    </div>
+    </nav> 
+     
     <div id="main">
     </div>
 
-<center>
-
+    <center>
+<br>
+<br>
 
   
-<div class="col-8" style="background-color: black;">
+<div class="col-8" style="background-color:black;">
 
 <br>
 <br>
@@ -105,7 +103,7 @@
 
     </p>
         <p>
-          <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" >
+          <button class="btn btn-dark; type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" >
             Actualizar Informacion
           </button>
         </p>
@@ -130,8 +128,10 @@
          <tr><td><label for="">Contraseña</label></td>         <td><input type="text" name="usucontrasena" class="form-control"  value="<?php echo $a[3];?>"  required =""></td> </tr>
          <tr><td><label for="">Estado</label></td>             <td><label><?php echo $a[4];?></label><input type="hidden" name="usuestado" class="form-control"  value="<?php echo $a[4];?>"  required =""></td> </tr>
          <tr><td><label for="">Rol</label></td>                <td><label><?php echo $a[5];?></label><td><input type="hidden" name="usurol" class="form-control"  value="<?php echo $a[5];?>"  required =""></td> </tr>
-         <tr><td><label for="">Email</label> </td>              <td><input type="email"  name="usucorreo" class="form-control"  value="<?php echo $a[6];?>"  required ="" ></td> </tr>
-         <tr><td><label for="">Sexo</label></td>               <td><input type="text" name="ususexo" class="form-control" required="" ></td> </tr>
+         <tr><td><label for="">Email</label> </td>             <td><input type="email"  name="usucorreo" class="form-control"  value="<?php echo $a[6];?>"  required ="" ></td> </tr>
+         <tr><td><label for="">Sexo</label></td>               <td> <select id="pass" type="text-dark" class="dropdown-item" name="ususexo"  required="">
+                                                                      <option style="color: black;" value="Hombre">Hombre</option>
+                                                                      <option style="color: black;" value="Mujer" >Mujer</option></select> </td> </tr>
          <tr><td><label for="">foto</label></td>               <td><input type="file" name="foto" accept="image/gif,image/jpeg,image/png,application/pdf" id="exampleInputPassword5" required="" ></td> </tr>      
           <?php } ?> 
           </table>
@@ -147,26 +147,24 @@
 
 
 </center>
+
+
+
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   </body>
 
-      <script>
-            function openNav() {
-                document.getElementById("sideNavigation").style.width = "250px";
-                document.getElementById("main").style.marginLeft = "250px";
-            }
-             
-            function closeNav() {
-                document.getElementById("sideNavigation").style.width = "0";
-                document.getElementById("main").style.marginLeft = "0";
-            }
-
-
-      </script>
-
-
-
+<script>
+function openNav() {
+    document.getElementById("sideNavigation").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+}
+ 
+function closeNav() {
+    document.getElementById("sideNavigation").style.width = "0";
+    document.getElementById("main").style.marginLeft = "0";
+}
+</script>
 
 </html>

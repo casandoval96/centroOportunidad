@@ -10,24 +10,30 @@
 </head>
 <body>
 
-    <div id="sideNavigation" class="sidenav">
+<div id="sideNavigation" class="sidenav">
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                      <center>               
-                                      <img src="img/<?php echo $fotousu;?>" class='imgRedonda' width="170" height="170" style="border-radius:190px;border:3px solid black;" >
+                     <center>               
+                                      <img src="img/<?php echo $fotousu;?>" class='imgRedonda' width="170" height="170" style="border-radius:190px;border:10px solid blue;" >
                                         <div class="card-body">
                                           <h4 style="color: white;" class="card-title"><?php echo $nomusu;?></h4>
                                           <h5 style="color: white;"  class="card-title"><?php echo $docusuario;?></h5>
                                         </div>
 
-                                        
-                                            <a type="button" class="btn btn-primary mb-1" href="usuario.php" style="width: 90%;" >
+                                        <ul class="list-group list-group-flush">
+                                            <a type="button" class="btn btn-primary mb-1" href="perfil.php" style="width: 99%;" >
+
                                               Ver perfil
                                             </a>
+                                            <a type="button" class="btn btn-primary mb-1" href="empleado.php" style="width: 99%;" >
+
+                                              Empleado
+                                            </a>
+                                        </ul>    
                                       <form action="indice.php" method="POST">
-                                        <button class="btn btn-primary"  type="submit" name="cerrar" style="width: 90%;">Cerrar sesion</button>
+                                        <button class="btn btn-danger"  type="submit" name="cerrar" style="width: 99%;">Cerrar sesion</button>
                                       </form>
-                                    </ul>
-                    </center>                   
+                                    
+                    </center>                 
     </div>
      
    <nav class="topnav navbar navbar-dark" style="background-color:#111;" > 
@@ -51,10 +57,10 @@
  
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color:rgba(00,00,00,0.3);" >
     <div class="btn-group btn-group-justified" role="group" style="width: 100%;height: 40px;">
-      <a href="Usuario2.php"     type="button" class="btn btn-danger">Usuarios</a>
-      <a href="oferta.php"       type="button" class="btn btn-danger">Oferta</a>
-      <a href="aplicaciones2.php" type="button" class="btn btn-danger">Aplicaciones</a>
-      <a href="empleado.php"    type="button" class="btn btn-danger">Empleado</a>
+      <a href="Usuario2.php"     type="button" class="btn btn-dark" style="border-radius:  12px ;" >Usuarios</a>
+      <a href="oferta.php"       type="button" class="btn btn-dark" style="border-radius:  12px ;" >Oferta</a>
+      <a href="aplicaciones2.php" type="button" class="btn btn-dark" style="border-radius: 12px ;">Aplicaciones</a> 
+      <a href="finalista.php" type="button" class="btn btn-dark" style="border-radius: 12px ;">Entrevistas finalistas </a>  
     </div>
     </nav> 
 
@@ -266,9 +272,9 @@
 
                                <form action="" method="POST">
                                <?php foreach($datohoj as $f) { ?> 
-                               <input type="hidden" name="apliide" value="<?php echo $f[1];?>">
+                               <input type="text" name="apliide" value="<?php echo $f[0];?>">
                                <input type="hidden" name="numaplicacion" value="<?php echo $aplicacion;?>">  
-                               <?php } ?>
+                             <?php } ?>
                                <td><input type="submit" name="agendar" value="Agendar Cita"></td>
 
                                </form>
@@ -280,84 +286,79 @@
      <?php if(isset($_POST['agendar'])) { ?>
 
 
+
     
-                  <div class="col-10">
+   <div class="col-12 alert-warning">
+     <h2>Escoga seleccionador,fecha y hora de la cita</h2>
+      <form action="" method="POST">
+      <input type="hidden" class="btn form-control" name="finide" value="0">
+      <input type="hidden" class="btn-secondary form-control"  name="finaplid" value="<?php echo $numaplicacion;?>">      
+      <table class="table table-striped">
+      <td><select name="finseleccionador" class="btn-secondary  form-control">
+              
+               <?php foreach ($datospsi as $f) { ?>
+                  <option value="<?php echo $f[0];?>"><?php echo $f[2];?></option>
+                  <?php } ?>
+      </select></td>
+          <?php
+            // Obteniendo la fecha actual del sistema con PHP
+            $fechaActual = date('d-m-Y');
+          ?>
+   
+
+      <td><input type="date" class="btn-secondary form-control"  name="finfecha" min="<?php echo $fechaActual;?>" >   </td>
+      <td><input type="time" class="btn-secondary form-control"  name="finhora" ></td>      
+      </table>
+      <td><input type="submit" name="insertarfinalista" value="Registar"></td>
+      </form>
+   </div>
 
 
-
-                      <form action="" method="POST">
-
-                      
-
-                      <input type="hidden" class="btn form-control" name="finide" value="0">
-                      <input type="hidden" class="btn-secondary form-control"  name="finaplid" value="<?php echo $numaplicacion;?>">
-                      <table class="table table-dark table-striped">
-                      <thead>
-                        <tr>
-                          <th scope="col">Psicologo</th>
-                          <th scope="col">Fecha</th>
-                          <th scope="col">Hora</th>
-                        </tr>
-                      </thead>
-                      <td><select name="finseleccionador" class="btn-secondary  form-control">
-                              
-                              <?php
-                              foreach ($datospsi as $f)
-                                {?>
-                                  <option value="<?php echo $f[0];?>"><?php echo $f[2];?></option>
-                                  <?php
-                                }
-                                ?>
-                      </select></td>
-                      <td><input type="date" class="btn-secondary form-control"  name="finfecha" min="2021-09-29" max="2021-10-31" requiered="" ></td>
-                      <td><input type="time" class="btn-secondary form-control"  name="finhora" ></td>      
-                      </table>         
-                      <td><input type="submit" name="insertarfinalista" value="AGENDAR"></td>
-                      
-                    </form> 
-                  </div>
-
-
-<br><br><br>
-
-<table class="table table-hover table-secondary col-10" >
+<br><br>
+<?php foreach($datosfin as $f) { ?>
+  <h2>Citas Agendadas <?php echo $f[8];?> </h2>
+ <table class="table table-hover table-secondary col-12" >
   <thead>
     <tr>
-      <th scope="col">numero</th>
-      <th scope="col">Aplicacion numero</th>
-      <th scope="col">Psicologo</th>
-      <th scope="col">Fecha</th>
-      <th scope="col">Hora</th>
+      <th scope="col">Cita Numero</th>
+      <th scope="col">Entidad</th>
+      <th scope="col">Cargo</th>
     </tr>
-  </thead>
-
- <?php foreach($datosfin as $f) { ?> 
+  </thead> 
   <tbody class="">
+    <form action="" method= "POST">  
     <tr>
-      <form action="" method= "POST">
-      <th scope="row"><input type="number" class="btn form-control" name="finide" value="<?php echo $f[0];?>" readonly></th>
-      <td><input type="text" class="btn form-control"  name="finaplid" value="<?php echo $f[1];?>"  readonly></td>
-      <td><input type="text" class="btn form-control"  name="finpsicologo" value="<?php echo $f[2];?>"></td>
-      
-      <td><input type="date" class="btn form-control"  name="finfecha" value="<?php echo $f[3];?>"></td>
-      <td><input type="time" class="btn form-control"  name="finhora" value="<?php echo $f[4];?>"></td>      
-      </form>
+      <td><input type="text" class="btn form-control"  name="finide"       value="<?php echo $f[0];?>"  readonly></td>
+      <td><input type="text" class="btn form-control"  name="finaplid"     value="<?php echo $f[1];?>"  readonly></td>
+      <td><input type="text" class="btn form-control"  name="finpsicologo" value="<?php echo $f[2];?>"  readonly></td> 
     </tr>
+      <thead>
+      <tr>
+        <th scope="col">Descripcion</th>
+        <th scope="col">Seleccionador</th>
+        <th scope="col">Fecha de la cita </th>
+      </tr>
+      </thead>     
+    <tr>
+      <td><input type="text" class="btn form-control"  name="finfecha"     value="<?php echo $f[3];?>"  readonly></td>
+      <td><input type="text" class="btn form-control"  name="finhora"      value="<?php echo $f[4];?>"  readonly></td>       
+      <td><input type="text" class="btn form-control"  name="finaplid"     value="<?php echo $f[5];?>"  readonly></td>    
+    </tr>
+    <thead>
+      <tr>
+        <th scope="col">Hora</th>
+        <th scope="col">Decision </th>
+      </tr>
+      </thead>     
+    <tr>
+      <td><input type="text" class="btn form-control"  name="finfecha"     value="<?php echo $f[6];?>"  readonly></td>
+      <td><input type="text" class="btn form-control"  name="finhora"      value="<?php echo $f[7];?>"  readonly></td>           
+    </tr>
+    </form>
   </tbody>
- <?php }  ?>
 </table>
-
-
-
-
-
-
-
-
-
-
-
-     <?php } ?>
+<?php }  ?>
+<?php } ?>
 
  </center>
  </div>

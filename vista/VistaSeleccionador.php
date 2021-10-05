@@ -20,13 +20,13 @@
                                         </div>
 
                                         <ul class="list-group list-group-flush">
-                                            <a type="button" class="btn btn-primary mb-1" href="perfil.php" style="width: 99%;" >
+                                            <a type="button" class="btn btn-primary mb-1" href="perfil3.php" style="width: 99%;" >
 
-                                              Ver perfil
+                                            Ver Perfil
                                             </a>
-                                            <a type="button" class="btn btn-primary mb-1" href="empleado.php" style="width: 99%;" >
+                                            <a type="button" class="btn btn-primary mb-1" href="Seleccionador.php" style="width: 99%;" >
 
-                                              Empleado
+                                            Seleccionador 
                                             </a>
                                         </ul>    
                                       <form action="indice.php" method="POST">
@@ -50,17 +50,15 @@
       <a class="navbar-brand" href="#">
         <img src="vista/imagenes/facebook.png" width="30" height="25" alt="">
         <img src="vista/imagenes/gorjeo.png" width="30" height="25" alt="">
-        <img src="vista/imagenes/instagram.png" width="30" height="25" alt="">
-        <img src="vista/imagenes/whatsapp.png" width="30" height="25" alt="">
+ 
       </a> 
     </nav>
  
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color:rgba(00,00,00,0.3);" >
     <div class="btn-group btn-group-justified" role="group" style="width: 100%;height: 40px;">
-      <a href="Usuario2.php"     type="button" class="btn btn-dark" style="border-radius:  12px ;" >Usuarios</a>
-      <a href="oferta.php"       type="button" class="btn btn-dark" style="border-radius:  12px ;" >Oferta</a>
-      <a href="aplicaciones2.php" type="button" class="btn btn-dark" style="border-radius: 12px ;">Aplicaciones</a> 
-      <a href="finalista.php" type="button" class="btn btn-dark" style="border-radius: 12px ;">Entrevistas finalistas </a>  
+      <a href="Usuario3.php"     type="button" class="btn btn-dark" style="border-radius:  12px ;" >Mi Usuario</a>
+      <a href="Cita2.php"       type="button" class="btn btn-dark" style="border-radius:  12px ;" >Citas </a>
+
     </div>
     </nav> 
      
@@ -72,12 +70,12 @@
 
 <form action="" method= "POST">
   <div >
-
+r
         <div class="jumbotron jumbotron-fluid bg-dark"  >
           <div class="container">
-            <h1 class="display-4"  style="color:white;" >Bienvenido Empleado </h1>
-            <p class="lead" style="color:white;" ><?php echo $nomusu;?>  para nosotros es muy importante saber que estas buscando por eso podras utilizar nuestros servicios   </p>
-            <p class="lead" style="color:white;" > tu como  Empleado podras dar a conocer las ofertas que tienes </p>
+            <h1 class="display-4"  style="color:white;" >Bienvenido Seleccionador</h1>
+            <p class="lead" style="color:white;" > Bienvenido/a    <?php echo $nomusu;?>  este es el sistema de seleccion de personal para la plataforma centrooportunidad </p>
+            <p class="lead" style="color:white;" >  En estea plataforma vas a poder visualizar las citas que tienes agendadas para la seleccion de candidatos  </p>
 
           </div>
         </div>  
@@ -88,8 +86,8 @@
 <div class="card bg-dark text-white">
   <img src="vista/imagenes/imagen2.jpg" class="card-img" width="30" height="400"  alt="...">
   <div class="card-img-overlay">
-    <h3 style="color:black;">Centroportunidad</h3>
-    <p  style="color:black;" class="card-text">Disfruta de todod nuestros servicios </p>
+    <h3 style="color:black;">Centrooportunidad</h3>
+    <h2  style="color:black;" class="card-text">Disfruta de todos nuestros servicios </h2>
   </div>
 
 

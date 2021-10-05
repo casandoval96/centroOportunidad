@@ -15,7 +15,7 @@ class modeloAspirante{
         echo "Error al consultar".$e;
      }
      return $datos;
-}
+ }
 
 
   public function uno($id)
@@ -29,7 +29,7 @@ class modeloAspirante{
             echo "Error al consultar".$e;
     }
     return $datos;
-}
+ }
 
 
 
@@ -62,7 +62,7 @@ class modeloAspirante{
 
 
 
-public function Actualizarasp($ide,$nom,$rol,$gen)
+ public function Actualizarasp($ide,$nom,$rol,$gen)
     {
         try
         {

@@ -134,7 +134,7 @@ create table tbfinalista
  finfecha date,
  finhora time,
  finentrevista text,
- findecision varchar,
+ findecision varchar (5),
  foreign key(finaplid) references tbaplicacion(aplid),
  foreign key(finseleccionador) references tbusuario(usuid)	
 );	
@@ -165,3 +165,29 @@ from tbfinalista;
 
 
 select * from tbusuario where usurol="Seleccionador"
+
+select finide,aploferta,ofeentidad,ofenombre,ofedescripcion,usunombre 
+from tbfinalista
+inner join tbaplicacion on(finaplid=aplid)
+inner join tbofertas on(aploferta=ofeid) 
+inner join tbhojadevida on(hojid=aplhojadevida) 
+inner join tbaspirante on(aplhojadevida=aspcedulaaspirante)
+inner join tbusuario on(aspcedulaaspirante=usuid)
+where hojid = "1074187055";                   
+
+select finide,ofeentidad,ofenombre,ofedescripcion,usunombre,finfecha,finhora,findecision,hojlugarexpedicion
+from tbfinalista
+inner join tbusuario on(finseleccionador=usuid)
+inner join tbaplicacion on(finaplid=aplid)
+inner join tbofertas on(ofeid=aploferta) 
+inner join tbhojadevida on(aplhojadevida=hojid)
+where aplhojadevida="1074187055";
+
+
+select finide,ofeentidad,ofenombre,ofedescripcion,usunombre,finfecha,finhora,findecision,hojlugarexpedicion
+from tbfinalista
+inner join tbusuario on(finseleccionador=usuid)
+inner join tbaplicacion on(finaplid=aplid)
+inner join tbofertas on(ofeid=aploferta) 
+inner join tbhojadevida on(aplhojadevida=hojid)
+where usuid ="3213543";

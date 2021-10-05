@@ -11,25 +11,6 @@
 <body>
 
 
-  <style type="text/css">
-    
-
- 
- 
-/* --- Clase que agregaremos cuando el usuario haga scroll --- */
-.menu-fixed {
-  position:fixed;
-  z-index:1000;
-  top:0;
-  
-  width:100%;
-  box-shadow:0px 4px 3px rgba(0,0,0,.5);
-}
-
-
-
-  </style>
-
 
 
 
@@ -47,9 +28,12 @@
                                           <h4 style="color: white;" class="card-title"><?php echo $nomusu;?></h4>
                                           <h5 style="color: white;"  class="card-title"><?php echo $docusuario;?></h5>
                                         </div>
-
                                         <ul class="list-group list-group-flush">
-                                            <a type="button" class="btn btn-primary mb-1" href="usuario.php" style="width: 98%;" >
+                                            <a type="button" class="btn btn-primary mb-1" href="aspirante.php" style="width: 99%;" >
+                                              Aspirante 
+                                        </a>    
+                                        <ul class="list-group list-group-flush">
+                                            <a type="button" class="btn btn-primary mb-1" href="usuario.php" style="width: 99%;" >
                                               Ver perfil
                                         </a>
                                       <form action="indice.php" method="POST">
@@ -79,10 +63,10 @@
     </nav>
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color:rgba(00,00,00,0.3);" >
     <div class="btn-group btn-group-justified" role="group" style="width: 100%;height: 40px;">
-      <a href="hojadevida.php" type="button" class="btn btn-secondary">Hoja de vida</a>
-      <a href="oferta2.php" type="button" class="btn btn-secondary">oferta</a>
-      <a href="aplicaciones.php" type="button" class="btn btn-secondary">Aplicaciones</a>
-      <a href="aspirante.php" type="button" class="btn btn-secondary">Aspirante</a>
+      <a href="hojadevida.php" type="button" class="btn btn-secondary" style="border-radius:  12px ;" >Hoja de vida</a>
+      <a href="oferta2.php" type="button" class="btn btn-secondary" style="border-radius:  12px ;">oferta</a>
+      <a href="aplicaciones.php" type="button" class="btn btn-secondary" style="border-radius:  12px ;">Aplicaciones</a>
+      <a href="cita.php" type="button" class="btn btn-secondary" style="border-radius:  12px ;">Citas Agendadas</a>
 
     </div>
     </nav> 

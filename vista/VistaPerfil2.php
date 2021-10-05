@@ -10,7 +10,7 @@
 </head>
 <body>
 
-<div id="sideNavigation" class="sidenav">
+    <div id="sideNavigation" class="sidenav">
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
                      <center>               
                                       <img src="img/<?php echo $fotousu;?>" class='imgRedonda' width="170" height="170" style="border-radius:190px;border:10px solid blue;" >
@@ -20,7 +20,7 @@
                                         </div>
 
                                         <ul class="list-group list-group-flush">
-                                            <a type="button" class="btn btn-primary mb-1" href="perfil.php" style="width: 99%;" >
+                                            <a type="button" class="btn btn-primary mb-1" href="perfil2.php" style="width: 99%;" >
 
                                               Ver perfil
                                             </a>
@@ -57,22 +57,20 @@
  
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color:rgba(00,00,00,0.3);" >
     <div class="btn-group btn-group-justified" role="group" style="width: 100%;height: 40px;">
-      <a href="Usuario2.php"     type="button" class="btn btn-dark" style="border-radius:  12px ;" >Usuarios</a>
-      <a href="oferta.php"       type="button" class="btn btn-dark" style="border-radius:  12px ;" >Oferta</a>
-      <a href="aplicaciones2.php" type="button" class="btn btn-dark" style="border-radius: 12px ;">Aplicaciones</a> 
-      <a href="finalista.php" type="button" class="btn btn-dark" style="border-radius: 12px ;">Entrevistas finalistas </a>  
+      <a href="Usuario2.php"     type="button" class="btn btn-danger" style="border-radius:  12px ;" >Usuarios</a>
+      <a href="oferta.php"       type="button" class="btn btn-danger" style="border-radius:  12px ;" >Oferta</a>
+      <a href="aplicaciones2.php" type="button" class="btn btn-danger" style="border-radius: 12px ;">Aplicaciones</a> 
+      <a href="finalista.php.php" type="button" class="btn btn-danger" style="border-radius: 12px ;">Entrevistas finalistas </a>  
     </div>
     </nav>
 
-    
-    <div id="main">
-    </div>
 
-<center>
-
+    <center>
+<br>
+<br>
 
   
-<div class="col-8" style="background-color: black;">
+<div class="col-8" style="background-color:red;">
 
 <br>
 <br>
@@ -105,7 +103,7 @@
 
     </p>
         <p>
-          <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" >
+          <button class="btn btn-danger; type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" >
             Actualizar Informacion
           </button>
         </p>
@@ -130,8 +128,10 @@
          <tr><td><label for="">Contraseña</label></td>         <td><input type="text" name="usucontrasena" class="form-control"  value="<?php echo $a[3];?>"  required =""></td> </tr>
          <tr><td><label for="">Estado</label></td>             <td><label><?php echo $a[4];?></label><input type="hidden" name="usuestado" class="form-control"  value="<?php echo $a[4];?>"  required =""></td> </tr>
          <tr><td><label for="">Rol</label></td>                <td><label><?php echo $a[5];?></label><td><input type="hidden" name="usurol" class="form-control"  value="<?php echo $a[5];?>"  required =""></td> </tr>
-         <tr><td><label for="">Email</label> </td>              <td><input type="email"  name="usucorreo" class="form-control"  value="<?php echo $a[6];?>"  required ="" ></td> </tr>
-         <tr><td><label for="">Sexo</label></td>               <td><input type="text" name="ususexo" class="form-control" required="" ></td> </tr>
+         <tr><td><label for="">Email</label> </td>             <td><input type="email"  name="usucorreo" class="form-control"  value="<?php echo $a[6];?>"  required ="" ></td> </tr>
+         <tr><td><label for="">Sexo</label></td>               <td> <select id="pass" type="text-dark" class="dropdown-item" name="ususexo"  required="">
+                                                                      <option style="color: black;" value="Hombre">Hombre</option>
+                                                                      <option style="color: black;" value="Mujer" >Mujer</option></select> </td> </tr>
          <tr><td><label for="">foto</label></td>               <td><input type="file" name="foto" accept="image/gif,image/jpeg,image/png,application/pdf" id="exampleInputPassword5" required="" ></td> </tr>      
           <?php } ?> 
           </table>
@@ -170,3 +170,12 @@
 
 
 </html>
+
+
+
+
+
+
+
+
+    

@@ -63,3 +63,6 @@ on ofeid=aploferta
 select finide,finaplid,psinombre,finfecha,finhora from tbfinalista
 inner join tbpsicologo
 on psiidentificacion=finpsicologo;
+
+
+

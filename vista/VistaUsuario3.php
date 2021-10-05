@@ -10,7 +10,7 @@
 </head>
 <body>
 
-    <div id="sideNavigation" class="sidenav">
+<div id="sideNavigation" class="sidenav">
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
                      <center>               
                                       <img src="img/<?php echo $fotousu;?>" class='imgRedonda' width="170" height="170" style="border-radius:190px;border:10px solid blue;" >
@@ -20,13 +20,13 @@
                                         </div>
 
                                         <ul class="list-group list-group-flush">
-                                            <a type="button" class="btn btn-primary mb-1" href="perfil.php" style="width: 99%;" >
+                                            <a type="button" class="btn btn-primary mb-1" href="perfil3.php" style="width: 99%;" >
 
                                               Ver perfil
                                             </a>
-                                            <a type="button" class="btn btn-primary mb-1" href="empleado.php" style="width: 99%;" >
+                                            <a type="button" class="btn btn-primary mb-1" href="Seleccionador.php" style="width: 99%;" >
 
-                                              Empleado
+                                              Seleccionador
                                             </a>
                                         </ul>    
                                       <form action="indice.php" method="POST">
@@ -57,140 +57,20 @@
  
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color:rgba(00,00,00,0.3);" >
     <div class="btn-group btn-group-justified" role="group" style="width: 100%;height: 40px;">
-      <a href="Usuario2.php"     type="button" class="btn btn-dark" style="border-radius:  12px ;" >Usuarios</a>
-      <a href="oferta.php"       type="button" class="btn btn-dark" style="border-radius:  12px ;" >Oferta</a>
-      <a href="aplicaciones2.php" type="button" class="btn btn-dark" style="border-radius: 12px ;">Aplicaciones</a> 
-      <a href="finalista.php" type="button" class="btn btn-dark" style="border-radius: 12px ;">Entrevistas finalistas </a>  
+      <a href="Usuario3.php"     type="button" class="btn btn-dark" style="border-radius:  12px ;" >Mi Usuario</a>
+      <a href="oferta.php"       type="button" class="btn btn-dark" style="border-radius:  12px ;" >Citas </a>
+
     </div>
     </nav>
 
-
-
-<div class="row">
-
-
-
-
-<div  class="row col-12"><br></div>
-<div  class="row col-1"><br></div>
-
-
-
-    <div  class="row col-2" style="border-radius: 1em;height: 650px; padding: 20px;  box-shadow: 10px 10px  5px 0 #4f3466ff; background-color: silver;">
-     
-      
-      
-     
-      <div style="background-color: rgba(00,00,00,0.5); width:100%;height:30%;"> 
-          <center> 
-          <br>
-          <br>      
-          <form action="" method="POST" >
-          <h3 class="text">Buscar por:</h3><input type="text" name ="buscar" class ="txt" ><br>
-          <input type="submit" name="filtro" value = "buscar" class="btn-primary">
-          </form>
-          </center>
-      </div>
-      <div class="list-group">  
-         <form action="" method="POST">
-          <h3>Por Genero:</h3>
-         <input type="submit" name="hombre"   value="Hombre"      class="btn btn-outline-dark btn-lg btn-block">
-         <input type="submit" name="mujer"    value="Mujer"       class="btn btn-outline-dark btn-lg btn-block">
-         <h3>Por Rol:</h3>
-         <input type="submit" name="aspirante" value="Aspirante"  class="btn btn-outline-danger btn-lg btn-block " >
-         <input type="submit" name="empleado" value="empleado"    class="btn btn-outline-danger btn-lg btn-block " >
-         </form> 
-      </div>
-      <h3>Ingresar Nuevo Usuario:</h3>
-      <button onclick="myFunction()"  class="btn btn-outline-danger btn-lg btn-block" >Ingresar Nuevo usuario </button>     
-
-    </div>
-
-<div  class="row col-1"><br></div>
-<div class="col-8" style="border-radius: 1em; box-shadow: 10px 10px  5px 0 #4f3466ff; background-color: silver;">
-
-<br>
-
-              <div  id="myDIV" style="display: none;  border-radius: 1em;padding: 10px;  box-shadow: 10px 10px  5px 0 #4f3466ff;background-color: rgba(00,00,00,0.3);"  >
-                <form action="" method= "POST" enctype="multipart/form-data">
-                 <h3 style="display: flex;align-items: center;flex-direction: column; justify-content: center;" >Nuevo Usuario</h3>
-                  <div class="form-row" >
-                    <div class="form-group col-md-6" >
-                      <label for="inputEmail4">Identificacion</label>
-                      <input type="number" class="form-control" name="usuid" required="" >
-                    </div>
-                    <div class="form-group col-md-6">
-                      <label for="inputState">Tipo de documento</label>
-                      <select id="inputState" class="form-control" name="usutipodocumento" required="">
-                        <option value="cedula">cedula</option>
-                        <option value="contaseña">contraseña</option>
-                        <option value="pasaporte">Pasaporte</option>
-                      </select>
-                    </div>                  
-                  </div>
-                  <div class="form-group">
-                    <label for="inputAddress">Nombre </label>
-                    <input type="text" class="form-control" name="usunombre" required="">
-                  </div>
-                  <div class="form-row">
-                    <div class="form-group col-md-6">
-                      <label for="inputCity">Contraseña</label>
-                      <input type="password" class="form-control" name="usucontrasena" required="">
-                    </div>
-                    <div class="form-group col-md-3">
-                      <label for="inputState">Estado</label>
-                      <select id="inputState" class="form-control" name="usuestado" >
-                        <option value="1" >activo</option>
-                        <option value="0">inactivo</option>
-                      </select>
-                    </div>
-                    <div class="form-group col-md-3">
-                      <label for="inputState">Rol</label>
-                      <select id="inputState" class="form-control" name="usurol" >
-                        <option value="aspirante">aspirante</option>
-                        <option value="empleado">empleado</option>
-                      </select>
-                    </div>
-                  </div>
-                   <div class="form-row">
-                    <div class="form-group col-md-3">
-                      <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
-                      <div class="col-sm-10">
-                        <input type="email" class="form-control" name="usucorreo" required="">s
-                      </div>
-                    </div>
-                    <div class="form-group col-md-3">
-                      <label for="inputState">Sexo</label>
-                      <select id="inputState" class="form-control" name="ususexo" >
-                        <option value="Hombre">Hombre</option>
-                        <option value="Mujer">Mujer</option>
-                      </select>
-                      <input type="hidden"  name="usu">
-                    </div>
-                    <div class="form-group col-md-4">
-                      <label for="inputEmail4" class="col-sm-2 col-form-label" >FOTO</label>
-                      <div class="col-sm-10">
-                        <input type="file" name="foto" accept="image/gif,image/jpeg,image/png,application/pdf" id="inputEmail4">
-                      </div>
-                    </div>                  
-                </div>
-                <div style="display: flex;align-items: center;flex-direction: column; justify-content: center;">
-                  <input  type="submit"   name="insert" class="btn btn-primary" value="REGISTRAR"  >
-                </div>
-                </form>
-              </div>
-
-
-
 <br>
 
 <br>
 
-<br>
+<center>
+<div class="row col-10">
 
-
-
-      <table class="table table-responsive table-dark " >
+      <table class="table table-dark " >
         <thead>
         <tr >
           <td>Identificacion     </td>
@@ -207,7 +87,7 @@
         </tr>
          </thead>
          <tbody>
-      <?php foreach($datos as $f) {  ?>
+      <?php foreach($datosusu as $f) {  ?>
         <tr>
           <td><?php echo $f[0];?></td>
           <td><?php echo $f[1];?></td>
@@ -231,8 +111,8 @@
       </table>
       <br>
       <br>
+       
 
-<center>
     <?php if(isset($_POST['actu'])) { ?>
          <form action="" method= "POST" enctype="multipart/form-data">
           <table class="table col-5 btn-secondary" style="border-radius: 1em; box-shadow: 10px 10px  5px 0 #4f3466ff;"> 
@@ -271,11 +151,10 @@
 
     <?php } ?>
 
+         </div>  
 
-  
-</center>
-</div>     
-</div>
+        </center>     
+
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
@@ -293,14 +172,6 @@
                 document.getElementById("main").style.marginLeft = "0";
             }
 
-            function myFunction() {
-                var x = document.getElementById("myDIV");
-                if (x.style.display === "block") {
-                    x.style.display = "none";
-                } else {
-                    x.style.display = "block";
-                }
-            }
 
 
       </script>

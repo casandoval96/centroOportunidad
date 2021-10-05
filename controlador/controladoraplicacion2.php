@@ -8,6 +8,7 @@ require_once('modelo/modeloExperiencia.php');
 require_once('modelo/modeloEstudios.php');
 require_once('modelo/ModeloFinalista.php');
 require_once('modelo/ModeloPsicologo.php');
+require_once('modelo/ModeloUsuario.php');
 
 
 $ofe = new modeloOferta();
@@ -19,6 +20,7 @@ $exp = new modeloExperiencia();
 $est = new modeloEstudios();
 $fin = new modeloFinalista();
 $psi = new modelopsicologo();
+$usu = new modeloUsuario();
 
 
 $ofer=$ofe->consultarofe();
@@ -26,7 +28,7 @@ $cate=$cat->consultarCategoria();
 $nive=$niv->consultarNivel();
 $datos=$apl->consultaraplicacion();
 $datospsi=$psi->consultarpsi();
-$datosfin=$fin->consultarfinalis();
+
 
 
 session_start(); 
@@ -97,17 +99,20 @@ $data=$apl->unoapli($ofeid);
 
 
 if(isset($_POST['ver'])){
-$aplicacion=$_POST['apliide'];
+
 
 $aplhojadevida=$_POST['aplhojadevida'];
 $datohoj=$hoj->uno($aplhojadevida);
 $datoest=$est->unoest($aplhojadevida);
 $datoexp=$exp->unoexp($aplhojadevida);
+
 }
 
 
 if(isset($_POST['agendar'])){
-$numaplicacion=$_POST['numaplicacion'];
+    $aplicacion=$_POST['apliide'];
+    $numaplicacion=$_POST['numaplicacion'];
+$datosfin=$fin->finalistauno($aplicacion);
 }
 
 

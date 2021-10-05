@@ -60,6 +60,21 @@ public function unousu($usuid)
 }
 
 
+
+public function usuariouno($usuid)
+    {
+        try {
+            $ps=Conexion::conexionbd()->prepare('Select * from tbusuario where usuid=?;');
+            $ps->bindParam(1,$usuid);
+            $ps->execute();
+            $data=$ps->fetchALL();
+        } catch (Exeption $e) {
+            echo "Error al consultar".$e;
+    }
+    return $datosusu;
+}
+
+
  public function Insertarusu($ide,$tip,$nom,$con,$est,$rol,$cor,$sex,$adjunto)
     {
         try

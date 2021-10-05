@@ -34,7 +34,12 @@ class modeloFinalista{
     public function consultarfinalis()
     {
         try{
-            $ps=Conexion::conexionbd()->prepare('select finide,finaplid,finseleccionador,finfecha,finhora from tbfinalista;');
+            $ps=Conexion::conexionbd()->prepare('select finide,ofeentidad,ofenombre,ofedescripcion,usunombre,finfecha,finhora,findecision,hojlugarexpedicion
+            from tbfinalista
+            inner join tbusuario on(finseleccionador=usuid)
+            inner join tbaplicacion on(finaplid=aplid)
+            inner join tbofertas on(ofeid=aploferta) 
+            inner join tbhojadevida on(aplhojadevida=hojid);');
             $ps->execute();
             $datos=$ps->fetchALL();
 
@@ -43,6 +48,31 @@ class modeloFinalista{
      }
      return $datos;
 }
+
+
+
+public function finalistauno($id)
+{
+    try {
+        $ps=Conexion::conexionbd()->prepare('select finide,ofeentidad,ofenombre,ofedescripcion,usunombre,finfecha,finhora,findecision,hojlugarexpedicion
+        from tbfinalista
+        inner join tbusuario on(finseleccionador=usuid)
+        inner join tbaplicacion on(finaplid=aplid)
+        inner join tbofertas on(ofeid=aploferta) 
+        inner join tbhojadevida on(aplhojadevida=hojid)
+        where aplhojadevida=?;');
+        $ps->bindParam(1, $id);
+        $ps->execute();
+        $datos=$ps->fetchALL();
+    } catch (Exeption $e) {
+        echo "Error al consultar".$e;
+}
+return $datos;
+}
+
+
+
+
 
 
 
